@@ -9,14 +9,37 @@ package OperacionesMatematicas;
 
 public class OperacionesMatematicas
 {
+	int n1, n2;
+	
 	/**
-	 * Método que calcula el producto obtenido tras multiplicar dos números enteros.
+	 * Constructor con dos parámetros enteros
 	 * @param n1
 	 * @param n2
+	 */
+	public OperacionesMatematicas(int n1, int n2)
+	{
+		this.n1 = n1;
+		this.n2 = n2;
+	}
+	
+	/**
+	 * Constructor con un parámetro entero
+	 * @param n1
+	 */
+	public OperacionesMatematicas(int n1)
+	{
+		this.n1 = n1;
+	}
+	
+	/**
+	 * Método que calcula el producto obtenido tras multiplicar dos números enteros.
+	 * <br> n1 = multiplicando
+	 * <br> n2 = multiplicador
 	 * @return producto
 	 */
-	public int ProductoEntero(int n1, int n2)
-	{//	Declaramos las variables que vamos a utilizar
+	public int ProductoEntero()
+	{
+		//	Declaramos las variables que vamos a utilizar
 		int producto;
 		
 		//	Comprobamos que los números sean válidos
@@ -43,26 +66,26 @@ public class OperacionesMatematicas
 	
 	/**
 	 * Método que calcula el cociente obtenido tras dividir dos números enteros.
-	 * @param dividendo
-	 * @param divisor
+	 * <br> n1 = dividendo
+	 * <br> n2 = divisor
 	 * @return cociente
 	 */
-	public int CocienteEntero(int dividendo, int divisor)
+	public int CocienteEntero()
 	{
 		//	Declaramos la variables que vams a utilizar
 		int cociente;
 		
 		//	Comprobamos si los valores son válidos
-		if((dividendo < 0) || (divisor <= 0))
+		if((n1 < 0) || (n2 <= 0))
 			cociente = -1;
 		else
 		{
 			//	Calculamos el cociente
 			cociente = 0;
-			while(dividendo >= divisor)
+			while(n1 >= n2)
 			{
 				cociente++;
-				dividendo = dividendo - divisor;
+				n1 = n1 - n2;
 			}
 		}
 		
@@ -72,50 +95,52 @@ public class OperacionesMatematicas
 	
 	/**
 	 * Método que calcula el resto obtenido tras dividir dos números enteros.
-	 * @param dividendo
-	 * @param divisor
-	 * @return dividendo
+	 * @return resto
 	 */
-	public int RestoEntero(int dividendo, int divisor)
+	public int RestoEntero()
 	{
+		//	Declaramos las variables que vamos a utilizar
+		int resto;
+		
 		//	Comprobamos que los valores sean válidos
-		if((dividendo < 0) || (divisor <= 0))
-			dividendo = -1;
+		if((n1 < 0) || (n2 <= 0))
+			resto = -1;
 		else
 		{
-			//	Calculaos el resto
-			while(dividendo >= divisor)
+			resto = n1;
+			//	Calculamos el resto
+			while(resto >= n2)
 			{
-				dividendo = dividendo - divisor;
+				resto = resto - n2;
 			}
 		}
 		
 		//	Devolvemos el resultado obtenido.
-		return dividendo;
+		return resto;
 	}
 	
 	/**
 	 * Método que calcula la potencia de dos números enteros.
-	 * @param base
-	 * @param exponente
+	 * <br> n1 = base
+	 * <br> n2 = exponente
 	 * @return potencia
 	 */
-	public int PotenciaEntera(int base, int exponente)
+	public int PotenciaEntera()
 	{
 		//	Declaramos las variables que vamos a utilizar
 		int potencia;
 		
 		//	Comprobamos si los valores son válidos
-		if((base < 0) || (exponente < 0))
+		if((n1 < 0) || (n2 < 0))
 			potencia = -1;
 		else
 		{
 			//	Calculamos la potencia
 			potencia = 1;
-			while(exponente > 0)
+			while(n2 > 0)
 			{
-				potencia = potencia * base;
-				exponente = exponente -1;
+				potencia = potencia * n1;
+				n2 = n2 -1;
 			}
 		}
 		
@@ -125,25 +150,25 @@ public class OperacionesMatematicas
 	
 	/**
 	 * Método que calcula el factorial de un número.
-	 * @param numero
+	 * <br> n1 = numero
 	 * @return factorial
 	 */
-	public int Factorial(int numero)
+	public int Factorial()
 	{
 		//	Declaramos las variables que vamos a utlizar
 		int factorial;
 		
 		//	Comprobamos si los valores son válidos
-		if(numero < 0)
+		if(n1 < 0)
 			factorial = -1;
 		else
 		{
 			//	Calculamos el factorial
 			factorial = 1;
-			while(numero > 1)
+			while(n1 > 1)
 			{
-				factorial = factorial * numero;
-				numero--;
+				factorial = factorial * n1;
+				n1--;
 			}
 		}
 		
@@ -153,30 +178,30 @@ public class OperacionesMatematicas
 	
 	/**
 	 * Método que calcula el producto obtenido tras multiplicar dos números enteros utilizando el método ruso.
-	 * @param factor1
-	 * @param factor2
+	 * <br> n1 = multiplicando
+	 * <br> n2 = multiplicador
 	 * @return solucion
 	 */
-	public int ProductoRuso(int factor1, int factor2)
+	public int ProductoRuso()
 	{
 		//	Declaramos las variables que vamos a utilizar
 		int solucion;
 		
 		//	Comprobamos si los valores son válidos
-		if((factor1 < 0) || (factor2 < 2))
+		if((n1 < 0) || (n2 < 2))
 			solucion = -1;
 		else
 		{
 			//	Calculamos el producto ruso
 			solucion = 0;
-			if(factor1 > 0)
+			if(n1 > 0)
 			{
-				while(factor2 > 0)
+				while(n2 > 0)
 				{
-					if(factor2 % 2 != 0)
-						solucion = solucion + factor1;
-					factor1 = factor1 * 2;
-					factor2 = factor2 / 2;
+					if(n2 % 2 != 0)
+						solucion = solucion + n1;
+					n1 = n1 * 2;
+					n2 = n2 / 2;
 				}
 			}
 		}
