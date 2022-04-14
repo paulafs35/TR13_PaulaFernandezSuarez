@@ -43,11 +43,10 @@ public class OperacionesMatematicas
 		int producto;
 		
 		//	Comprobamos que los números sean válidos
-		if((n1 < 0) || (n2 <= 0))
+		if((n1 < 0) || (n2 < 0))
 			producto = -1;
 		else
 		{
-
 			//	Calculamos el producto
 			producto = 0;
 			if(n2 > 0)
@@ -72,7 +71,7 @@ public class OperacionesMatematicas
 	 */
 	public int CocienteEntero()
 	{
-		//	Declaramos la variables que vams a utilizar
+		//	Declaramos las variables que vamos a utilizar
 		int cociente;
 		
 		//	Comprobamos si los valores son válidos
@@ -89,7 +88,7 @@ public class OperacionesMatematicas
 			}
 		}
 		
-		//	Devolvemos el resulatdo obtenido
+		//	Devolvemos el resultado obtenido
 		return cociente;
 	}
 	
@@ -155,7 +154,7 @@ public class OperacionesMatematicas
 	 */
 	public int Factorial()
 	{
-		//	Declaramos las variables que vamos a utlizar
+		//	Declaramos las variables que vamos a utilizar
 		int factorial;
 		
 		//	Comprobamos si los valores son válidos
