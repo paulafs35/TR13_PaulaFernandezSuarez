@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"TR13_PaulaFernandezSuarez","l":"OperacionesMatematicas"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"OperacionesMatematicas"}];updateSearchResults();

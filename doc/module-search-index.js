@@ -1,1 +1,1 @@
-moduleSearchIndex = [{"l":"TR13_PaulaFernandezSuarez"}];updateSearchResults();
+moduleSearchIndex = [];updateSearchResults();
